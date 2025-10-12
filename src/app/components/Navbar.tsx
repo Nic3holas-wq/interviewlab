@@ -3,8 +3,9 @@ import React from "react";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-white shadow-md sticky top-0 z-50">
-      {/* Logo */}
+    <nav className="sticky top-0 z-50">
+    <div className="flex justify-between items-center px-6 py-4 bg-white ">
+            {/* Logo */}
       <Link href="/" className="flex items-center space-x-2">
         <div className="text-xl font-bold">
           <span className="text-purple-600">Interview</span>
@@ -45,6 +46,8 @@ const Navbar: React.FC = () => {
       <button className="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-sm">
         Start free trial
       </button>
+    </div>
+      <hr className="border-gray-200"/>
     </nav>
   );
 };
