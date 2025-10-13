@@ -1,11 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
+import Button from '@/app/components/Button'
 
 const HeroSection = () => {
   return (
     <main 
      style={{ backgroundImage: "url('/assets/background.jpg')" }}
-     className="flex flex-col md:flex-row items-start pt-[25%] pb-[10%] sm:pb-[25%] sm:pt-[10%] justify-between w-full md:w-[100%] mx-auto px-6 min-h-screen">
+     className="flex flex-col md:flex-row items-start pt-[25%] pb-[10%] sm:pb-[5%] sm:pt-[10%] justify-between w-full md:w-[100%] mx-auto px-6 min-h-screen">
       {/* LEFT SIDE - TEXT SECTION */}
       <div className="md:w-1/2 sm:space-y-6">
         <div>
@@ -21,13 +22,23 @@ const HeroSection = () => {
         </div>
 
         {/* BUTTONS */}
-        <div className="flex justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-          <button className="bg-orange-500 hover:bg-orange-600 transition text-white py-2 px-4 sm:py-3 sm:px-10 rounded-3xl font-semibold">
+        <div className="hidden sm:flex justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+          <Button variant="primary" size="large">
             Get Started Free
-          </button>
-          <button className="border border-gray-400 hover:bg-orange-600 hover:text-white hover:border-transparent transition py-3 px-10 rounded-3xl font-semibold">
+          </Button>
+
+          <Button variant="secondary" size="large">
             Watch Demo
-          </button>
+          </Button>
+        </div>
+        <div className="sm:hidden flex justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+          <Button variant="primary" size="small">
+            Get Started Free
+          </Button>
+
+          <Button variant="secondary" size="small">
+            Watch Demo
+          </Button>
         </div>
         <section className="mt-8 sm:mt-16">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
