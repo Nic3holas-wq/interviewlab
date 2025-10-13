@@ -5,15 +5,6 @@ import Navbar from "./components/Navbar";
 import { inter } from '@/app/ui/fonts';
 import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "InterviewLab",

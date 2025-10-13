@@ -1,4 +1,5 @@
 import Button from '@/app/components/Button'
+import Image from 'next/image';
 import React from 'react'
 
 const illustrations = [
@@ -36,7 +37,7 @@ const TransformSection = () => {
             key={index}
             className="bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition transform hover:scale-105 w-64 sm:w-72 p-6 flex flex-col items-center"
           >
-            <img
+            <Image
               src={item.src}
               alt={item.title}
               className="w-full h-40 object-contain mb-4"
