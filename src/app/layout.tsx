@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { inter } from '@/app/ui/fonts';
 import Footer from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Navbar/>
         {children}
+        <SpeedInsights/>
         <Footer/>
       </body>
     </html>
