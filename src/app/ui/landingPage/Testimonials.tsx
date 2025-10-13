@@ -111,32 +111,15 @@ const Testimonials: React.FC = () => {
 
                   {/* Quote */}
                   <p className="text-gray-700 text-sm sm:text-base mb-4 text-center">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </p>
+
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          display: flex;
-          animation: scroll 30s linear infinite;
-        }
-        .pause-animation {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 };
