@@ -40,6 +40,8 @@ const TransformSection = () => {
             <Image
               src={item.src}
               alt={item.title}
+              width={160}
+              height={160}
               className="w-full h-40 object-contain mb-4"
             />
             <h3 className="text-xl font-semibold mb-2">{item.title}</h3>

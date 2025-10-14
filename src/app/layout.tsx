@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { inter } from '@/app/ui/fonts';
 import Footer from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
+import SessionProviderWrapper from "./providers/SessionProviderWrapper";
 
 export const metadata: Metadata = {
   title: "InterviewLab",
@@ -24,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <Navbar/>
-        {children}
+        <SessionProviderWrapper>{children}</SessionProviderWrapper>
         <SpeedInsights/>
         <Footer/>
       </body>

@@ -31,9 +31,12 @@ const Navbar: React.FC = () => {
     </div>
 
     {/* Button */}
-    <button className="bg-purple-600 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition shadow-sm">
+    <Link
+      href="/signin"
+      className="bg-purple-600 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition shadow-sm"
+    >
       Start free trial
-    </button>
+    </Link>
   </div>
 </nav>
 
