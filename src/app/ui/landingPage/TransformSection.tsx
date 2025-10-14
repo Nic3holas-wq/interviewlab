@@ -1,6 +1,10 @@
+'use client'
 import Button from '@/app/components/Button'
 import Image from 'next/image';
 import React from 'react'
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Link from 'next/link';
 
 const illustrations = [
   {
@@ -21,6 +25,16 @@ const illustrations = [
 ];
 
 const TransformSection = () => {
+  const { data: session } = useSession();
+      const router = useRouter();
+    
+      const handleStartClick = () => {
+        if (session) {
+          router.push("/interview"); // Redirect if logged in
+        } else {
+          router.push("/signin"); // Otherwise go to sign in
+        }
+      };
   return (
     <main className="text-center px-6 pt-5 sm:pt-10">
       <h2 className="text-xl sm:text-4xl font-bold mb-4">
@@ -52,14 +66,22 @@ const TransformSection = () => {
 
       {/* Call to Action */}
       <div className="mt-8 block sm:hidden">
-        <Button variant="primary" size="small">
-          Start Your Transformation
-        </Button>
+        <Link href={"/interview"}>
+            <Button 
+            variant="primary" size="small">
+            Start Your Transformation
+          </Button>
+        </Link>
+        
       </div>
       <div className="mt-8 hidden sm:block">
-        <Button variant="primary" size="large">
-          Start Your Transformation
+        <Link href={"/interview"}>
+        <Button
+          variant="primary" size="large">
+            Start Your Transformation
         </Button>
+        </Link>
+        
       </div>
     </main>
   );

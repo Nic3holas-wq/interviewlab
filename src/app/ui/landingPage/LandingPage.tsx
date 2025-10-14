@@ -10,15 +10,33 @@ import FAQSection from './FAQSection'
 export const LandingPage = () => {
   return (
     <main>
-      <HeroSection/>
-      <CompaniesSection/>
-      <TransformSection/>
-      <HowItWorks/>
-      <Features/>
-      <Testimonials/>
-      <FAQSection/>
-    </main>
+      <section id="hero">
+        <HeroSection />
+      </section>
 
-    
+      <section id="companies">
+        <CompaniesSection />
+      </section>
+
+      <section id="transform">
+        <TransformSection />
+      </section>
+
+      <section id="how-it-works">
+        <HowItWorks />
+      </section>
+
+      <section id="features">
+        <Features />
+      </section>
+
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
+      <section id="faq">
+        <FAQSection />
+      </section>
+    </main>
   )
 }

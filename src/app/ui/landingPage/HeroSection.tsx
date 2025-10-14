@@ -1,8 +1,22 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import Button from '@/app/components/Button'
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Link from 'next/link';
 
 const HeroSection = () => {
+  const { data: session } = useSession();
+    const router = useRouter();
+  
+    const handleStartClick = () => {
+      if (session) {
+        router.push("/interview"); // Redirect if logged in
+      } else {
+        router.push("/signin"); // Otherwise go to sign in
+      }
+    };
   return (
     <main 
      style={{ backgroundImage: "url('/assets/background.jpg')" }}
@@ -23,18 +37,24 @@ const HeroSection = () => {
 
         {/* BUTTONS */}
         <div className="hidden sm:flex justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-          <Button variant="primary" size="large">
+        <Link href={"/interview"}>
+          <Button
+           variant="primary" size="large">
             Get Started Free
           </Button>
+        </Link>
 
           <Button variant="secondary" size="large">
             Watch Demo
           </Button>
         </div>
         <div className="sm:hidden flex justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-          <Button variant="primary" size="small">
+          <Link href={"/interview"}>
+            <Button
+            variant="primary" size="small">
             Get Started Free
           </Button>
+          </Link>
 
           <Button variant="secondary" size="small">
             Watch Demo

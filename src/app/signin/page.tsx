@@ -14,8 +14,8 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="flex flex-col gap-6 items-center justify-center min-h-screen bg-gray-50">
-      <div className="bg-white w-[90%] sm:w-[50%] rounded-2xl shadow-lg h-full p-10 flex flex-col items-center">
+    <div className="flex flex-col gap-6 items-center justify-center h-screen bg-gray-50">
+      <div className="bg-white w-[90%] sm:w-[50%] rounded-2xl shadow-lg h-[70%] p-10 flex flex-col items-center">
         <Link href="/" className="flex items-center space-x-2 mb-4">
           <div className="text-lg sm:text-2xl font-bold">
             <span className="text-purple-600">Interview</span>
@@ -30,7 +30,7 @@ export default function SignInPage() {
         <button
           onClick={handleSignIn}
           disabled={loading}
-          className={`flex gap-4 items-center justify-center text-gray-700 px-6 py-2 rounded-3xl border border-gray-300 hover:bg-gray-100 transition ${
+          className={`flex gap-4 mt-18 items-center justify-center text-gray-700 px-6 py-2 rounded-3xl border border-gray-300 hover:bg-gray-100 transition ${
             loading ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >
