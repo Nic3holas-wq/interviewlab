@@ -2,7 +2,9 @@
 
 import Button from "@/app/components/Button";
 import React, { useState } from "react";
-
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 interface FAQItem {
   question: string;
   answer: string;
@@ -43,6 +45,17 @@ const FAQSection: React.FC = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const { data: session } = useSession();
+      const router = useRouter();
+    
+      const handleStartClick = () => {
+        if (session) {
+          router.push("/interview"); // Redirect if logged in
+        } else {
+          router.push("/signin"); // Otherwise go to sign in
+        }
+      };
+
   return (
     <section className="max-w-4xl mx-auto py-16 px-4">
       <h2 className="text-xl sm:text-4xl font-bold text-center mb-10 sm:mb-10">
@@ -73,10 +86,20 @@ const FAQSection: React.FC = () => {
 
       <h2 className="text-xl sm:text-4xl font-bold text-center pt-9 sm:pt-18">Start making interviews fearless</h2>
       <div className="hidden sm:block text-center pt-3 sm:pt-6">
-        <Button variant="primary" size="large">Get Started Now!</Button>
+        <Link href={"/interview"}>
+          <Button
+          onClick={handleStartClick}
+          variant="primary" size="large">Get Started Now!</Button>
+        </Link>
+        
       </div>
       <div className="block sm:hidden text-center pt-3 sm:pt-6">
-        <Button variant="primary" size="small">Get Started Now!</Button>
+        <Link href={"/interview"}>
+        <Button 
+          onClick={handleStartClick}
+          variant="primary" size="small">Get Started Now!</Button>
+        </Link>
+        
       </div>
     </section>
   );

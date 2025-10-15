@@ -1,8 +1,22 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import Button from '@/app/components/Button'
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Link from 'next/link';
 
 const HeroSection = () => {
+  const { data: session } = useSession();
+    const router = useRouter();
+  
+    const handleStartClick = () => {
+      if (session) {
+        router.push("/interview"); // Redirect if logged in
+      } else {
+        router.push("/signin"); // Otherwise go to sign in
+      }
+    };
   return (
     <main 
      style={{ backgroundImage: "url('/assets/background.jpg')" }}
@@ -13,7 +27,7 @@ const HeroSection = () => {
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-black leading-tight">
             Land Your Dream Job With
           </h1>
-          <h1 className="text-xl sm:text-2xl md:text-4xl font-black text-purple-600 pb-2 sm:pb-4">
+          <h1 className="text-xl sm:text-2xl md:text-4xl font-black text-purple-600 pt-2 pb-8 sm:pb-4">
             AI-Powered Interview Coaching
           </h1>
           <p className="text-base sm:text-lg text-gray-700">
@@ -23,24 +37,30 @@ const HeroSection = () => {
 
         {/* BUTTONS */}
         <div className="hidden sm:flex justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-          <Button variant="primary" size="large">
+        <Link href={"/interview"}>
+          <Button
+           variant="primary" size="large">
             Get Started Free
           </Button>
+        </Link>
 
           <Button variant="secondary" size="large">
             Watch Demo
           </Button>
         </div>
-        <div className="sm:hidden flex justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-          <Button variant="primary" size="small">
+        <div className="sm:hidden flex justify-center gap-2 sm:gap-4 mt-10 sm:mt-6">
+          <Link href={"/interview"}>
+            <Button
+            variant="primary" size="small">
             Get Started Free
           </Button>
+          </Link>
 
           <Button variant="secondary" size="small">
             Watch Demo
           </Button>
         </div>
-        <section className="mt-8 sm:mt-16">
+        <section className="hidden sm:block mt-8 sm:mt-16">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div>
               <h3 className="text-2xl sm:text-4xl font-extrabold text-blue-600">50K+</h3>
