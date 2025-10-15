@@ -111,7 +111,7 @@ const Testimonials: React.FC = () => {
 
                   {/* Quote */}
                   <p className="text-gray-700 text-sm sm:text-base mb-4 text-center">
-                    <span>"{testimonial.quote}"</span>
+                    <span>{testimonial.quote}</span>
                     
                   </p>
 
