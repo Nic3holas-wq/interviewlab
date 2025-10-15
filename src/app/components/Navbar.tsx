@@ -63,12 +63,15 @@ const Navbar: React.FC = () => {
         {/* Right Side Buttons */}
         <div className="flex items-center gap-3">
           {loggedIn && (
-            <SignOut/>
+            <div className="hidden sm:block">
+              <SignOut/>
+            </div>
+            
           )}
 
           <Link
             href={"/interview"}
-            className="bg-purple-600 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition shadow-sm"
+            className="bg-purple-600 text-white text-sm px-4 sm:px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition shadow-sm"
           >
             {loggedIn ? "Start Interview" : "Start Free Trial"}
           </Link>

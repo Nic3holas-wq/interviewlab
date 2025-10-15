@@ -27,7 +27,7 @@ const HeroSection = () => {
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-black leading-tight">
             Land Your Dream Job With
           </h1>
-          <h1 className="text-xl sm:text-2xl md:text-4xl font-black text-purple-600 pb-2 sm:pb-4">
+          <h1 className="text-xl sm:text-2xl md:text-4xl font-black text-purple-600 pt-2 pb-8 sm:pb-4">
             AI-Powered Interview Coaching
           </h1>
           <p className="text-base sm:text-lg text-gray-700">
@@ -48,7 +48,7 @@ const HeroSection = () => {
             Watch Demo
           </Button>
         </div>
-        <div className="sm:hidden flex justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+        <div className="sm:hidden flex justify-center gap-2 sm:gap-4 mt-10 sm:mt-6">
           <Link href={"/interview"}>
             <Button
             variant="primary" size="small">
@@ -60,7 +60,7 @@ const HeroSection = () => {
             Watch Demo
           </Button>
         </div>
-        <section className="mt-8 sm:mt-16">
+        <section className="hidden sm:block mt-8 sm:mt-16">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div>
               <h3 className="text-2xl sm:text-4xl font-extrabold text-blue-600">50K+</h3>

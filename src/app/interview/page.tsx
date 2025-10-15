@@ -40,7 +40,7 @@ export default function InterviewSelection() {
 
   return (
     <main className="min-h-screen bg-white py-12 px-6 mt-[5%]">
-      <h2 className="text-3xl font-bold text-center mb-10 text-blue-700">
+      <h2 className="text-xl sm:text-3xl font-bold text-center mb-5 sm:mb-10 text-blue-700">
         Select Your Interview Type
       </h2>
 
@@ -51,19 +51,19 @@ export default function InterviewSelection() {
           placeholder="Enter your job role..."
           value={search}
           onChange={handleSearchChange}
-          className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full p-2 sm:p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </div>
 
       {/* Small Note */}
       {search.trim() === "" && (
-        <p className="text-center mb-4 text-gray-500">
+        <p className="text-center text-sm sm:text-base mb-2 sm:mb-4 text-gray-500">
           Showing popular interview types. Search to explore more.
         </p>
       )}
 
       {/* Interview Type Cards */}
-      <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="grid sm:grid-cols-3 gap-3 sm:gap-6 max-w-5xl mx-auto">
         {displayTypes.length > 0 ? (
           displayTypes.map((type) => (
             <div
@@ -71,10 +71,10 @@ export default function InterviewSelection() {
               onClick={() => handleSelectType(type.name)}
               className="cursor-pointer bg-blue-50 border border-blue-200 rounded-xl p-6 shadow hover:bg-blue-100 transition"
             >
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-blue-800 mb-2">
                 {type.name}
               </h3>
-              <p className="text-gray-600">{type.description}</p>
+              <p className="text-gray-600 text-sm sm:text-base">{type.description}</p>
             </div>
           ))
         ) : (

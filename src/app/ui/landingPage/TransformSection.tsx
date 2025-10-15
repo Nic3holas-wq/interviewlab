@@ -45,7 +45,7 @@ const TransformSection = () => {
       </p>
 
       {/* Illustrations section */}
-      <section className="flex flex-wrap justify-center gap-8 sm:gap-12 mb-12">
+      <section className="flex flex-wrap justify-center gap-8 sm:gap-12 mb-6 sm:mb-12">
         {illustrations.map((item, index) => (
           <div
             key={index}
@@ -65,7 +65,7 @@ const TransformSection = () => {
       </section>
 
       {/* Call to Action */}
-      <div className="mt-8 block sm:hidden">
+      <div className="mt-2 block sm:hidden">
         <Link href={"/interview"}>
             <Button 
             variant="primary" size="small">
